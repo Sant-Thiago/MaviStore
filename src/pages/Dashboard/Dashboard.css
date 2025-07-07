@@ -1,0 +1,15 @@
+.dashboard-input {
+    display: flex;
+    background-color: #cccccc;
+    padding: 12px 15px;
+    border-radius: 12px;
+    gap: 12px;
+}
+
+.dashboard-input > input {
+    flex: 1;
+    border: none;
+    background-color: #cccccc;
+    outline: none;
+    font-size: 18px;
+}
