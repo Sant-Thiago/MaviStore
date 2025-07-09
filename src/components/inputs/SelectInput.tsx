@@ -25,7 +25,7 @@ export function SelectInput({
 }: SelectInputProps) {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [inputValue, setInputValue] = useState("");
+    const [inputValue, setInputValue] = useState(value);
     const ref = useRef<HTMLDivElement>(null);
 
     const filteredOptions = options.filter((option) =>

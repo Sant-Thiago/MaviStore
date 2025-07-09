@@ -55,7 +55,7 @@ export function AddNewProduct() {
             <TextInput
                 id="nameInput"
                 label="Nome do Produto"
-                placeholder="Digite o nome do produto"
+                placeholder="Digite o Nome do Produto"
                 value={formData.name}
                 onChange={(value) => handleChange("name", value)}
             />
@@ -63,7 +63,7 @@ export function AddNewProduct() {
             <TextInput
                 id="priceInput"
                 label="Preço"
-                placeholder="Digite o preço"
+                placeholder="Digite o Preço"
                 value={formData.price}
                 onChange={(value) => handleChange("price", value)}
             />
@@ -72,7 +72,7 @@ export function AddNewProduct() {
                 id="quantityInput"
                 label="Quantidade"
                 type="number"
-                placeholder="Digite a quantidade"
+                placeholder="Digite a Quantidade"
                 value={formData.quantity}
                 onChange={(value) => handleChange("quantity", value)}
             />
@@ -80,7 +80,7 @@ export function AddNewProduct() {
             <TextInput
                 id="descriptionInput"
                 label="Descrição"
-                placeholder="Digite as descrições do produto"
+                placeholder="Digite a Descrição do Produto"
                 value={formData.description}
                 onChange={(value) => handleChange("description", value)}
             />
@@ -88,7 +88,7 @@ export function AddNewProduct() {
             <SelectInput
                 id="categoryInput"
                 label="Categoria"
-                placeholder="Selecione a categoria"
+                placeholder="Selecione a Categoria"
                 value={formData.category}
                 onChange={(value) => handleChange("category", value)}
                 options={[
