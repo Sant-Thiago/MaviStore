@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./AddNewProduct.css";
+import { TextInput, SelectInput } from "../../components/inputs/index";
 
 export function AddNewProduct() {
     const [formData, setFormData] = useState({
@@ -16,10 +17,16 @@ export function AddNewProduct() {
 
     const handleSaveProduct = () => {
         const { name, price, quantity, description, category } = formData;
-         alert(
+        if (name == "" || price == "" || quantity == "" || description == "" || category == "") {
+            alert("Preencha todos os campos.");
+            return;
+        }
+
+        alert(
             `✅ Produto salvo com sucesso!\n\n` +
             `🛍️ Produto: ${name}\n💰 Preço: ${price}\n📦 Quantidade: ${quantity}\n📝 Descrição: ${description}\n🏷️ Categoria: ${category}`
         );
+        resetForm();
     }
 
     const resetForm = () => {
@@ -36,17 +43,16 @@ export function AddNewProduct() {
         <>
 
         
-        <h1 className="product-title">Adicionar Produto</h1>
+        <h1 className="product-title">Adicionar Produtos</h1>
 
         <form 
             className="product-form"
             onSubmit={(e) => {
                 e.preventDefault();
                 handleSaveProduct();
-                resetForm();
             }}
         >
-            <InputField
+            <TextInput
                 id="nameInput"
                 label="Nome do Produto"
                 placeholder="Digite o nome do produto"
@@ -54,7 +60,7 @@ export function AddNewProduct() {
                 onChange={(value) => handleChange("name", value)}
             />
 
-            <InputField
+            <TextInput
                 id="priceInput"
                 label="Preço"
                 placeholder="Digite o preço"
@@ -62,7 +68,7 @@ export function AddNewProduct() {
                 onChange={(value) => handleChange("price", value)}
             />
 
-            <InputField
+            <TextInput
                 id="quantityInput"
                 label="Quantidade"
                 type="number"
@@ -71,7 +77,7 @@ export function AddNewProduct() {
                 onChange={(value) => handleChange("quantity", value)}
             />
 
-            <InputField
+            <TextInput
                 id="descriptionInput"
                 label="Descrição"
                 placeholder="Digite as descrições do produto"
@@ -79,13 +85,17 @@ export function AddNewProduct() {
                 onChange={(value) => handleChange("description", value)}
             />
 
-            <InputField
+            <SelectInput
                 id="categoryInput"
                 label="Categoria"
-                type="search"
-                placeholder="Digite a categoria"
+                placeholder="Selecione a categoria"
                 value={formData.category}
                 onChange={(value) => handleChange("category", value)}
+                options={[
+                    { value: "biju-mãos", label: "Para Mãos" },
+                    { value: "biju-orelhas", label: "Para Orelhas" },
+                    { value: "biju-cabeça", label: "Para Cabeça" },
+                ]}
             />
 
                 <button type="submit">Salvar Produto</button>
@@ -94,35 +104,4 @@ export function AddNewProduct() {
         </>
     )
 
-}
-
-type InputFieldProps = {
-    id: string;
-    label: string;
-    placeholder: string;
-    value: string;
-    onChange: (value: string) => void;
-    type?: string;
-};
-
-function InputField({
-    id,
-    label,
-    placeholder,
-    value,
-    onChange,
-    type = "text"
-}: InputFieldProps) {
-  return (
-    <div className="product-input">
-      <label htmlFor={id}>{label}</label>
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </div>
-  );
 }

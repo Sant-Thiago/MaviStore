@@ -1,0 +1,80 @@
+.select-input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-weight: 600;
+    position: relative;
+}
+
+.select-input > label {
+    cursor: pointer;
+}
+
+.select-input > input {
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 18px;
+    border: solid #cccccc 1px;
+    margin: 9px 0 0;
+    cursor: pointer;
+}
+
+.select-input > .select-options {
+    border-radius: 12px;
+    border: solid #0c0c0c 1px;
+
+    background-color: #ffffff;
+    
+    height: fit-content;
+    max-height: 150px;
+
+    width: 100%;
+    
+    list-style: none;
+    
+    overflow: hidden;
+    overflow-y: auto;
+
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    
+    font-size: 18px;
+}
+
+.select-input > .select-options > .select-option {
+    padding: 12px 18px;
+    border-radius: 12px;
+    
+    cursor: pointer;
+}
+
+.select-input > .select-options > .select-option:hover {
+    background-color: #cccccc;
+} 
+
+.select-input > .select-options > .select-no-option {
+    padding: 12px 18px;
+    border-radius: 12px;
+}
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-weight: 600;
+}
+
+.text-input > label {
+    cursor: pointer;
+}
+
+.text-input > input {
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 18px;
+    border: solid #cccccc 1px;
+    margin: 9px 0;
+}

@@ -28,13 +28,13 @@ export function Navbar() {
                 />
                 
                 <NavItem 
-                    to="clientes"
+                    to="/clientes"
                     icon={<Users size={21} />} 
                     label="Clientes"
                 />
                 
                 <NavItem 
-                    to="mais"
+                    to="/mais"
                     icon={<span>...</span>} 
                     label="Mais"
                 />
@@ -43,7 +43,7 @@ export function Navbar() {
 
             <div className="navbar-settings">
                 <NavItem 
-                    to="configuracoes"
+                    to="/configuracoes"
                     icon={<Settings size={21}/>} 
                     label="Configurações"
                 />
