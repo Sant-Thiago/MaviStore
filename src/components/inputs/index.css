@@ -14,7 +14,7 @@
     padding: 12px 18px;
     border-radius: 12px;
     font-size: 18px;
-    border: solid #cccccc 1px;
+    border: solid #dfe6eb 2px;
     margin: 9px 0 0;
     cursor: pointer;
 }
@@ -52,7 +52,7 @@
 }
 
 .select-input > .select-options > .select-option:hover {
-    background-color: #cccccc;
+    background-color: #dfe6eb;
 } 
 
 .select-input > .select-options > .select-no-option {
@@ -75,6 +75,6 @@
     padding: 12px 18px;
     border-radius: 12px;
     font-size: 18px;
-    border: solid #cccccc 1px;
+    border: solid #dfe6eb 1px;
     margin: 9px 0;
 }

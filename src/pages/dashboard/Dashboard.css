@@ -1,6 +1,15 @@
+.dashboard-title {
+    margin-bottom: 30px;
+}
+
+.dashboard-about {
+    color: #adadad;
+    margin-bottom: 39px;
+}
+
 .dashboard-input {
     display: flex;
-    background-color: #cccccc;
+    background-color: #dfe6eb;
     padding: 12px 15px;
     border-radius: 12px;
     gap: 12px;
@@ -9,7 +18,60 @@
 .dashboard-input > input {
     flex: 1;
     border: none;
-    background-color: #cccccc;
+    background-color: #dfe6eb;
     outline: none;
     font-size: 18px;
 }
+
+.dashboard-kpi {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+
+    gap: 9px;
+}
+
+.dashboard-kpi > .kpi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #dfe6eb;
+    padding: 21px;
+    border-radius: 12px;
+
+    width: 333px;
+    height: 138px;
+}
+
+.dashboard-reports-title {
+    margin-bottom: 30px;
+}
+
+.dashboard-reports-kpi {
+    display: flex;
+    margin: 15px 0;
+    justify-content: space-between;
+    gap: 9px;
+}
+
+.dashboard-reports-kpi > .kpi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid #dfe6eb 2px;
+    border-radius: 12px;
+
+    padding: 21px;
+
+    min-width: 333px;
+    width: 50%;
+
+    height: 300px;
+}
+
+.dashboard-reports-kpi > .kpi > .chart {
+    height: 60%;
+    display: block;
+    border: solid 2px black;
+} 

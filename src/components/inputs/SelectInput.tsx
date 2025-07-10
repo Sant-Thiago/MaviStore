@@ -7,7 +7,7 @@ type Option = {
 
 type SelectInputProps = {
     id: string;
-    label: string;
+    label?: string;
     placeholder: string;
     value: string;
     onChange: (value: string) => void;
@@ -17,7 +17,7 @@ type SelectInputProps = {
 
 export function SelectInput({
     id,
-    label,
+    label = "",
     placeholder,
     value,
     onChange,
