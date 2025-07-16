@@ -3,6 +3,10 @@
     margin-bottom: 30px;
 }
 
+.product-section {
+    overflow-y: scroll;
+}
+
 .product-form {
     display: flex;
     flex-direction: column;

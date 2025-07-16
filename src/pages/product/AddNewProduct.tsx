@@ -45,61 +45,64 @@ export function AddNewProduct() {
         
         <h1 className="product-title">Adicionar Produtos</h1>
 
-        <form 
-            className="product-form"
-            onSubmit={(e) => {
-                e.preventDefault();
-                handleSaveProduct();
-            }}
-        >
-            <TextInput
-                id="nameInput"
-                label="Nome do Produto"
-                placeholder="Digite o Nome do Produto"
-                value={formData.name}
-                onChange={(value) => handleChange("name", value)}
-            />
+        <section className="product-section">
 
-            <TextInput
-                id="priceInput"
-                label="Preço"
-                placeholder="Digite o Preço"
-                value={formData.price}
-                onChange={(value) => handleChange("price", value)}
-            />
+            <form 
+                className="product-form"
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSaveProduct();
+                }}
+            >
+                <TextInput
+                    id="nameInput"
+                    label="Nome do Produto"
+                    placeholder="Digite o Nome do Produto"
+                    value={formData.name}
+                    onChange={(value) => handleChange("name", value)}
+                />
 
-            <TextInput
-                id="quantityInput"
-                label="Quantidade"
-                type="number"
-                placeholder="Digite a Quantidade"
-                value={formData.quantity}
-                onChange={(value) => handleChange("quantity", value)}
-            />
+                <TextInput
+                    id="priceInput"
+                    label="Preço"
+                    placeholder="Digite o Preço"
+                    value={formData.price}
+                    onChange={(value) => handleChange("price", value)}
+                />
 
-            <TextInput
-                id="descriptionInput"
-                label="Descrição"
-                placeholder="Digite a Descrição do Produto"
-                value={formData.description}
-                onChange={(value) => handleChange("description", value)}
-            />
+                <TextInput
+                    id="quantityInput"
+                    label="Quantidade"
+                    type="number"
+                    placeholder="Digite a Quantidade"
+                    value={formData.quantity}
+                    onChange={(value) => handleChange("quantity", value)}
+                />
 
-            <SelectInput
-                id="categoryInput"
-                label="Categoria"
-                placeholder="Selecione a Categoria"
-                value={formData.category}
-                onChange={(value) => handleChange("category", value)}
-                options={[
-                    { value: "biju-mãos", label: "Para Mãos" },
-                    { value: "biju-orelhas", label: "Para Orelhas" },
-                    { value: "biju-cabeça", label: "Para Cabeça" },
-                ]}
-            />
+                <TextInput
+                    id="descriptionInput"
+                    label="Descrição"
+                    placeholder="Digite a Descrição do Produto"
+                    value={formData.description}
+                    onChange={(value) => handleChange("description", value)}
+                />
 
-                <button type="submit">Salvar Produto</button>
-        </form>
+                <SelectInput
+                    id="categoryInput"
+                    label="Categoria"
+                    placeholder="Selecione a Categoria"
+                    value={formData.category}
+                    onChange={(value) => handleChange("category", value)}
+                    options={[
+                        { value: "biju-mãos", label: "Para Mãos" },
+                        { value: "biju-orelhas", label: "Para Orelhas" },
+                        { value: "biju-cabeça", label: "Para Cabeça" },
+                    ]}
+                />
+
+                    <button type="submit">Salvar Produto</button>
+            </form>
+        </section>
 
         </>
     )

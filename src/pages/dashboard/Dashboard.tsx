@@ -2,6 +2,7 @@ import { Ban, Search } from "lucide-react";
 import { useEffect, useState } from "react"
 import "./Dashboard.css";
 import { SelectInput } from "../../components/inputs";
+import { SalesTrendChart, ProductPerformanceChart, AreaSalesTrendChart } from "../../components/charts";
 
 export function Dashboard() {
     
@@ -45,71 +46,78 @@ export function Dashboard() {
         <>
         
         <h1 className="dashboard-title">Dashboard</h1>
-
         <p className="dashboard-about">Visualização da performance de sua loja</p>
         
-        <InputField 
-            value = {valueSearch}
-            onChange = {(value) => handleChange(value)}
-        />
+        <section className="dashboard-section">
+            
+            <InputField 
+                value = {valueSearch}
+                onChange = {(value) => handleChange(value)}
+            />
 
-        <ul className="dashboard-kpi">
-            <div className="kpi">
-                <p className="title">Total de Vendas</p>
-                <h2 className="value">{totalSales}</h2>
-                <span className="percent">{totalSalesPercent}</span>
+            <ul className="dashboard-kpi">
+                <div className="kpi">
+                    <p className="title">Total de Vendas</p>
+                    <h2 className="value">{totalSales}</h2>
+                    <span className="percent">{totalSalesPercent}</span>
+                </div>
+
+                <div className="kpi">
+                    <p className="title">Ganhos</p>
+                    <h2 className="value">{profit}</h2>
+                    <span className="percent">{profitPercent}</span>
+                </div>
+
+                <div className="kpi">
+                    <p className="title">Gastos</p>
+                    <h2 className="value">{expenses}</h2>
+                    <span className="percent">{expensesPercent}</span>
+                </div>
+
+                <div className="kpi">
+                    <p className="title">Resumo do estoque</p>
+                    <h2 className="value">{stockSummary}</h2>
+                    <span className="percent">{stockSummaryPercent}</span>
+                </div>
+
+            </ul>
+            
+            <h2 className="dashboard-reports-title">Reports</h2>
+
+            <SelectInput
+                id="dateRangeInput"
+                value={dateRange}
+                placeholder="Selecione o Intervalo de Data"
+                onChange={(value) => setDateRange(value)}
+                options={[
+                    { value: "ultimos7dias", label: "Últimos 7 Dias" },
+                    { value: "ultimos30dias", label: "Últimos 30 Dias" },
+                    { value: "ultimos3meses", label: "Últimos 3 Meses" },
+                ]}
+            />
+
+            <div className="dashboard-reports-kpi">
+                <div className="kpi">
+                    <p>Tendência de Vendas</p>
+                    <h2>{salesTrend}</h2>
+                    <span>{dateRangeKpi} {salesTrendPercent}</span>
+                    <span className="chart">
+                        <AreaSalesTrendChart />
+                    </span>
+                </div>
+
+                <div className="kpi">
+                    <p>Performance de Produto</p>
+                    <h2>{productPerformance}</h2>
+                    <span>{dateRangeKpi} {productPerformancePercent}</span>
+                    <span className="chart">
+                        <ProductPerformanceChart />
+                    </span>
+                </div>
+
             </div>
+        </section>
 
-            <div className="kpi">
-                <p className="title">Ganhos</p>
-                <h2 className="value">{profit}</h2>
-                <span className="percent">{profitPercent}</span>
-            </div>
-
-            <div className="kpi">
-                <p className="title">Gastos</p>
-                <h2 className="value">{expenses}</h2>
-                <span className="percent">{expensesPercent}</span>
-            </div>
-
-            <div className="kpi">
-                <p className="title">Resumo do estoque</p>
-                <h2 className="value">{stockSummary}</h2>
-                <span className="percent">{stockSummaryPercent}</span>
-            </div>
-
-        </ul>
-        
-        <h2 className="dashboard-reports-title">Reports</h2>
-
-        <SelectInput
-            id="dateRangeInput"
-            value={dateRange}
-            placeholder="Selecione o Intervalo de Data"
-            onChange={(value) => setDateRange(value)}
-            options={[
-                { value: "ultimos7dias", label: "Últimos 7 Dias" },
-                { value: "ultimos30dias", label: "Últimos 30 Dias" },
-                { value: "ultimos3meses", label: "Últimos 3 Meses" },
-            ]}
-        />
-
-        <div className="dashboard-reports-kpi">
-            <div className="kpi">
-                <p>Tendência de Vendas</p>
-                <h2>{salesTrend}</h2>
-                <span>{dateRangeKpi} {salesTrendPercent}</span>
-                <span className="chart">Grafico</span>
-            </div>
-
-            <div className="kpi">
-                <p>Performance de Produto</p>
-                <h2>{productPerformance}</h2>
-                <span>{dateRangeKpi} {productPerformancePercent}</span>
-                <span className="chart">Grafico</span>
-            </div>
-
-        </div>
 
         </>
 

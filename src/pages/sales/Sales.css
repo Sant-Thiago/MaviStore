@@ -3,6 +3,10 @@
     margin-bottom: 30px;
 }
 
+.sale-section {
+    overflow-y: scroll;
+}
+
 .sale-form {
     display: flex;
     flex-direction: column;
